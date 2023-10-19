@@ -9,7 +9,7 @@ return require('packer').startup(function(use)
 
 	-- Telescope (fuzzy finder)
 	use {
-		'nvim-telescope/telescope.nvim', tag = '0.1.1',
+		'nvim-telescope/telescope.nvim', tag = '0.1.4',
 		-- or                            , branch = '0.1.x',
 		requires = { {'nvim-lua/plenary.nvim'} }
 	}
@@ -33,6 +33,10 @@ return require('packer').startup(function(use)
 	-- Vim fugitive (Git integration)
 	use('tpope/vim-fugitive')
 
+    -- Github copilot
+    use('github/copilot.vim')
+
+    -- LSP indsafkadsklfadlksjfjkldfsajklfdsakjlfgkljdskl
 	use {
 		'VonHeikemen/lsp-zero.nvim',
 		branch = 'v2.x',
