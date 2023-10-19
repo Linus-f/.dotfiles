@@ -36,7 +36,7 @@ source $ZSH/oh-my-zsh.sh
 #   export EDITOR='mvim'
 # fi
 
-source /usr/local/opt/powerlevel10k/powerlevel10k.zsh-theme
+source /usr/local/opt/powerlevel10k/share/powerlevel10k/powerlevel10k.zsh-theme
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
@@ -59,7 +59,8 @@ alias gc='git commit'
 alias ga='git add'
 alias gst='git rev-parse --git-dir > /dev/null 2>&1 && git status || exa'
 
-
+# cat
+alias cat='bat'
 
 # Functions
 
@@ -75,3 +76,24 @@ alias grun='java -Xmx500M -cp "/usr/local/lib/antlr-4.13.0-complete.jar:$CLASSPA
 
 # source files
 source $HOME/export-esp.sh
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/usr/local/Caskroom/miniconda/base/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/usr/local/Caskroom/miniconda/base/etc/profile.d/conda.sh" ]; then
+        . "/usr/local/Caskroom/miniconda/base/etc/profile.d/conda.sh"
+    else
+        export PATH="/usr/local/Caskroom/miniconda/base/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
+
+# .NET Core
+export PATH="$PATH:/Users/$USER/.dotnet/tools"
+
+export GPG_TTY=$(tty)
