@@ -92,8 +92,22 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
+# code
+export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
 
 # .NET Core
 export PATH="$PATH:/Users/$USER/.dotnet/tools"
 
 export GPG_TTY=$(tty)
+
+# pnpm
+export PNPM_HOME="/Users/linus/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
+
+# enable azure cli autocompletion
+autoload bashcompinit && bashcompinit
+source $(brew --prefix)/etc/bash_completion.d/az
